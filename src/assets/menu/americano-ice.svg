@@ -1,0 +1,27 @@
+<svg width="480" height="480" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c5e9ff"/>
+      <stop offset="100%" stop-color="#f4fbff"/>
+    </linearGradient>
+    <linearGradient id="coffee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a5a3d"/>
+      <stop offset="100%" stop-color="#5e3d2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" rx="28" fill="url(#bg)"/>
+  <ellipse cx="240" cy="385" rx="120" ry="24" fill="#aac8db" opacity="0.4"/>
+  <g transform="translate(140 95)">
+    <rect x="10" y="40" width="180" height="220" rx="24" fill="#e8f5ff" stroke="#7fa0b5" stroke-width="8"/>
+    <rect x="25" y="64" width="150" height="180" rx="16" fill="url(#coffee)"/>
+    <g fill="#d8f2ff" opacity="0.8">
+      <rect x="35" y="78" width="28" height="40" rx="6"/>
+      <rect x="70" y="96" width="24" height="34" rx="6"/>
+      <rect x="106" y="86" width="30" height="42" rx="6"/>
+      <rect x="142" y="102" width="22" height="30" rx="6"/>
+    </g>
+    <rect x="88" y="8" width="10" height="44" rx="5" fill="#7fa0b5"/>
+    <rect x="88" y="8" width="60" height="10" rx="5" fill="#7fa0b5"/>
+  </g>
+  <text x="240" y="445" text-anchor="middle" font-size="34" font-weight="700" fill="#2f4a5c">ICED AMERICANO</text>
+</svg>
