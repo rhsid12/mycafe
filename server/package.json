@@ -1,0 +1,20 @@
+{
+  "name": "mycafe-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "db:create": "node scripts/create-database.js",
+    "db:init": "node scripts/init-db.js",
+    "db:setup": "node scripts/create-database.js && node scripts/init-db.js",
+    "db:check": "node scripts/check-connection.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

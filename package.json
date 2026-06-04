@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server:dev": "npm --prefix server run dev",
+    "server:start": "npm --prefix server run start",
+    "server:init-db": "npm --prefix server run db:init",
+    "server:db-setup": "npm --prefix server run db:setup",
+    "server:db-check": "npm --prefix server run db:check"
   },
   "dependencies": {
     "react": "^19.2.6",

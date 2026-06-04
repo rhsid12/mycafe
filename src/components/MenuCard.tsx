@@ -4,13 +4,13 @@ import { formatPrice } from '../utils/format'
 
 type MenuCardProps = {
   menu: MenuItem
-  onAdd: (menu: MenuItem, selectedOptionIds: string[]) => void
+  onAdd: (menu: MenuItem, selectedOptionIds: number[]) => void
 }
 
 export function MenuCard({ menu, onAdd }: MenuCardProps) {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
+  const [selectedOptions, setSelectedOptions] = useState<number[]>([])
 
-  function toggleOption(optionId: string) {
+  function toggleOption(optionId: number) {
     setSelectedOptions((prev) =>
       prev.includes(optionId)
         ? prev.filter((id) => id !== optionId)
@@ -46,7 +46,7 @@ export function MenuCard({ menu, onAdd }: MenuCardProps) {
                 onChange={() => toggleOption(option.id)}
               />
               <span>
-                {option.label}
+                {option.name}
                 {option.price > 0
                   ? ` (+${formatPrice(option.price)})`
                   : ' (+0원)'}

@@ -5,9 +5,10 @@ import { formatPrice } from '../utils/format'
 type CartPanelProps = {
   items: CartItem[]
   onOrder: () => void
+  ordering?: boolean
 }
 
-export function CartPanel({ items, onOrder }: CartPanelProps) {
+export function CartPanel({ items, onOrder, ordering = false }: CartPanelProps) {
   const total = getCartTotal(items)
   const isEmpty = items.length === 0
 
@@ -41,8 +42,9 @@ export function CartPanel({ items, onOrder }: CartPanelProps) {
               type="button"
               className="btn btn--primary"
               onClick={onOrder}
+              disabled={ordering}
             >
-              주문하기
+              {ordering ? '주문 중...' : '주문하기'}
             </button>
           </div>
         </div>
