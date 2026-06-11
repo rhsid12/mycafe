@@ -70,3 +70,19 @@ npm run dev
 npm run server:dev
 npm run server:init-db
 ```
+
+## Render 배포
+
+저장소 루트의 `render.yaml` Blueprint로 한 번에 배포할 수 있습니다.
+
+1. GitHub/GitLab에 코드를 push합니다.
+2. [Render Dashboard](https://dashboard.render.com/) → **New** → **Blueprint**
+3. 저장소를 연결하고 Blueprint를 적용합니다.
+4. 생성되는 서비스:
+   - **mycafe** — Node.js Web Service (API + 프론트엔드)
+   - **mycafe-db** — PostgreSQL (Free)
+
+배포 시 프론트엔드를 빌드하고, Express가 `dist/` 정적 파일과 `/api`를 함께 제공합니다.  
+`DATABASE_URL`은 Render Postgres와 자동으로 연결됩니다.
+
+배포 후 주소 예: `https://mycafe.onrender.com`

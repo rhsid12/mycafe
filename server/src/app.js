@@ -1,6 +1,11 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import cors from 'cors'
 import express from 'express'
 import { router } from './routes.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const distPath = path.resolve(__dirname, '../../dist')
 
 export function createApp() {
   const app = express()
@@ -8,6 +13,13 @@ export function createApp() {
   app.use(cors())
   app.use(express.json())
   app.use('/api', router)
+
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(distPath))
+    app.get(/^(?!\/api).*/, (_req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'))
+    })
+  }
 
   app.use((err, _req, res, _next) => {
     console.error(err)
